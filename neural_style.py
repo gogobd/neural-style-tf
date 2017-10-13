@@ -36,11 +36,11 @@ def parse_args():
     help='Filename of the content image (example: lion.jpg)')
 
   parser.add_argument('--style_imgs_dir', type=str,
-    default='./styles',
+    default=os.path.join('.', 'styles'),
     help='Directory path to the style images. (default: %(default)s)')
 
   parser.add_argument('--content_img_dir', type=str,
-    default='./image_input',
+    default=os.path.join('.', 'image_input'),
     help='Directory path to the content image. (default: %(default)s)')
   
   parser.add_argument('--init_img_type', type=str, 
@@ -132,7 +132,7 @@ def parse_args():
     help='GPU or CPU mode.  GPU mode requires NVIDIA CUDA. (default|recommended: %(default)s)')
   
   parser.add_argument('--img_output_dir', type=str, 
-    default='./image_output',
+    default=os.path.join('.', 'image_output'),
     help='Relative or absolute directory path to output image and data.')
   
   # optimizations
@@ -176,11 +176,11 @@ def parse_args():
     help='Image used to initialize the network during the every rendering after the first frame.')
   
   parser.add_argument('--video_input_dir', type=str, 
-    default='./video_input',
+    default=os.path.join('.', 'video_input'),
     help='Relative or absolute directory path to input frames.')
   
   parser.add_argument('--video_output_dir', type=str, 
-    default='./video_output',
+    default=os.path.join('.', 'video_output'),
     help='Relative or absolute directory path to output frames.')
   
   parser.add_argument('--content_frame_frmt', type=str, 
